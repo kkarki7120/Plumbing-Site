@@ -1,0 +1,70 @@
+#logo{
+    width:50px;
+    height:50px;
+    border-radius: 50px;
+    margin-left:40px;
+}
+
+.nav-item{
+    margin-left: 10px;
+    font-size: 18px;
+}
+
+
+.topbar{
+    height: 40px;
+    background-color:#03d7fc;
+    width: 98.45%;
+    padding: 6px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+}
+.top-text{
+    margin-left: 50px;
+}
+.top-logo{
+    margin-left:80%;
+}
+.top-logo a{
+    margin-left: 10px;
+}
+.navbar{
+    
+}
+
+.home{
+    height: 775px;
+    width: 100%;
+    background-image: url("./images/plumbing-home.jpg");
+    background-size: cover;
+    
+}
+
+.home-content{
+    height: 100%;
+    /* 54, 97, 181 */
+    background: rgba(29, 41, 109, 0.812);
+   
+}
+.home-bottom{
+    background-color: #03d7fc;
+    height: 40px;
+    
+}
+
+
+/* Responsive   */
+
+@media screen and (min-width: 1500px) {
+    #navbarNav{
+        margin-left:54%;
+    }
+}
+
+@media screen and (min-width: 900px) and (max-width:1500px){
+    #navbarNav{
+        margin-left:300px;
+    }
+}

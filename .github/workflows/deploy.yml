@@ -1,0 +1,31 @@
+# specifying name which is shown while running
+name: kushal deploying workflow 
+
+# this specify in which branch we are working 
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    # this is pre-build model 
+    steps:
+    # this is pre-build method which pulls code from repo in github run time 
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Deploy code to EC2
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          # 22 is default port for ssh
+          port: ${{ secrets.EC2_PORT }}
+          script: |
+            cd /home/ubuntu/Plumbing-Site
+            git pull origin main
+            echo "congratulations it works"
+            
+
